@@ -9,11 +9,10 @@ int clean_suite(void){return 0;}
 
 /* les tests*/
 void testSearchInteger(void) {
-  int* tab = generateSorted(4);
+  int* tab = generateSorted(10);
   int result = 2;
   CU_ASSERT_EQUAL(searchInteger(tab, 4, 3), result);
 }
-
 
 /* Mise en place des tests via main */
 int main(void){

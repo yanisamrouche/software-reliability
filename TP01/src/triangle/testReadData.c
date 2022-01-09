@@ -11,7 +11,7 @@ int clean_suite(void){return 0;}
 void testReadDataTrueTriangle(void) {
   Triangle triangle;
   triangle.coteA = 2.5;
-  triangle.coteB = 1.5;
+  triangle.coteB = 3.5;
   triangle.coteC = 2.5;
 
   Triangle triangle2 = readData("triangle.txt");
@@ -21,6 +21,7 @@ void testReadDataTrueTriangle(void) {
   CU_ASSERT_EQUAL(triangle2.coteC, triangle.coteC);
 
 }
+
 
 
 /* Mise en place des tests via main */

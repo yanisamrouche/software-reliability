@@ -35,14 +35,14 @@ Triangle readData (char * file){
 }
 
 int typeTriangle(float a, float b, float c){
-    if(a <= 0.0 || b <= 0.0 || c<= 0.0){
+    if(a <= 0.0 || b <= 0.0 || c<= 0.0 || (a > b+c) || (b > a+c) || (c > a+b)){
         return -1;
     }else if (a==b && b==c)
     {
         return 3;
     }else if (a==b || a==c || b==c){
         return 2;
-    }else{
+    }else if (a != b && b!=c && a!=c){
         return 1;
     }
     
