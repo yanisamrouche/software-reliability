@@ -1,0 +1,1 @@
+gcc -Wall -I$HOME/local/CUnit/include -o testTypeTriangle1 ../testTypeTriangle.c ../../../obj/triangle1.o -L$HOME/local/CUnit/lib -lcunit -o testTypeTriangle1
