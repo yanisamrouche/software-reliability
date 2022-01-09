@@ -12,18 +12,8 @@ int init_suite(void) { return 0;}
 int clean_suite(void){return 0;}
 
 /* les tests*/
-void testReadDataTrueTriangle(void) {
-  Triangle triangle;
-  triangle.coteA = 2.5;
-  triangle.coteB = 3.5;
-  triangle.coteC = 2.5;
-
-  Triangle triangle2 = readData("triangle.txt");
-
-  CU_ASSERT_EQUAL(triangle2.coteA, triangle.coteA);
-  CU_ASSERT_EQUAL(triangle2.coteB, triangle.coteB);
-  CU_ASSERT_EQUAL(triangle2.coteC, triangle.coteC);
-
+void testFormat(void) {
+  
 }
 
 /* Mise en place des tests via main */
@@ -49,7 +39,7 @@ int main(void){
   /*ajouter les  tests à la suite */
   printf("add first test\n");
   if (
-      (CU_add_test(pSuite,"testReadDataTrueTriangle", testReadDataTrueTriangle) == NULL) 
+      (CU_add_test(pSuite,"testFormat", testFormat) == NULL) 
       /* si plus de tests: || (CU_add_test(...)) || ...|| (CU_add_test(...))*/
       ){
     CU_cleanup_registry();

@@ -1,1 +1,1 @@
-gcc -Wall -I$HOME/local/CUnit/include -o testReadData3 ../testReadData.c ../../../obj/triangle3.o -L$HOME/local/CUnit/lib -lcunit -o testReadData3
+gcc -Wall -I$HOME/local/CUnit/include -o testReadData3 ../testReadData.c ../../../../obj/triangle3.o -L$HOME/local/CUnit/lib -lcunit -o testReadData3
