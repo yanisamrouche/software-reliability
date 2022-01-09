@@ -1,4 +1,8 @@
-#include "search.h"
+/* File: testSearch.c
+Auteurs: Yanis Amrouche
+cree le 05 01 2022
+ */
+#include "../src/search.h"
 #include <stdio.h>
 #include <stdbool.h>
 #include <CUnit/CUnit.h>
@@ -19,6 +23,12 @@ void testSearchInteger(void) {
   int* tab = generateSorted(10);
   int result = 2;
   CU_ASSERT_EQUAL(searchInteger(tab, 4, 3), result);
+}
+
+void testNotFoundValue(void) {
+  int* tab = generateSorted(10);
+  int result = 152;
+  CU_ASSERT_NOT_EQUAL(searchInteger(tab, 4, 3), result);
 }
 void testIfSorted(void){
   int length = 10;
@@ -58,6 +68,7 @@ int main(void){
   if ((CU_add_test(pSuite,"testSearchInteger", testSearchInteger) == NULL) 
       || (CU_add_test(pSuite,"testLengthTab", testLengthTab) == NULL) 
       || (CU_add_test(pSuite,"testIfSorted", testIfSorted) == NULL) 
+      || (CU_add_test(pSuite,"testNotFoundValue", testNotFoundValue) == NULL) 
 
       /* si plus de tests: || (CU_add_test(...)) || ...|| (CU_add_test(...))*/
       ){

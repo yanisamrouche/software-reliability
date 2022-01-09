@@ -1,3 +1,7 @@
+/* File: triangle.h
+Auteurs: Yanis Amrouche et Farouk Agueni
+cree le 04 01 2022
+modifie le:  09 01 2022  */
 #ifndef TRIANGLE
 #define TRIANGLE
 

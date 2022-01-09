@@ -1,4 +1,8 @@
-#include "triangle.h"
+/* File: testTypeTriangle.c
+Auteurs: Yanis Amrouche
+cree le 04 01 2022
+ */
+#include "../src/triangle.h"
 #include <stdio.h>
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>

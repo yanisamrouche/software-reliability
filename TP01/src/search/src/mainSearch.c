@@ -1,7 +1,7 @@
 /* File: mainTriangle.c
 Auteurs: Yanis Amrouche
-cree le 04 01 2022
-modifie le:  jj mm aa    */
+cree le 05 01 2022
+ */
 
 #include "search.h"
 #include <netdb.h>

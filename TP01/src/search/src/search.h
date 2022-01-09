@@ -1,3 +1,7 @@
+/* File: search.h
+Auteurs: Yanis Amrouche
+cree le 05 01 2022
+ */
 #ifndef SEARCH
 #define SEARCH
 

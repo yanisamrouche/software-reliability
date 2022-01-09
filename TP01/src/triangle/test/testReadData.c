@@ -1,4 +1,8 @@
-#include "triangle.h"
+/* File: testReadData.c
+Auteurs: Yanis Amrouche et Farouk Agueni
+cree le 04 01 2022
+ */
+#include "../src/triangle.h"
 #include <stdio.h>
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
@@ -21,8 +25,6 @@ void testReadDataTrueTriangle(void) {
   CU_ASSERT_EQUAL(triangle2.coteC, triangle.coteC);
 
 }
-
-
 
 /* Mise en place des tests via main */
 int main(void){

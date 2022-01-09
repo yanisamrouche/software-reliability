@@ -1,0 +1,1 @@
+gcc ./src/mainSearch.c ./src/search.c
