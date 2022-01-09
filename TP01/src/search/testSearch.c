@@ -1,5 +1,6 @@
 #include "search.h"
 #include <stdio.h>
+#include <stdbool.h>
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
@@ -8,10 +9,29 @@ int init_suite(void) { return 0;}
 int clean_suite(void){return 0;}
 
 /* les tests*/
+void testLengthTab(void){
+  int length = 10;
+  int* tab = generateSorted(length);
+  int* memeoireAlluee = malloc(length*sizeof(int));
+  CU_ASSERT_EQUAL(sizeof(tab), sizeof(memeoireAlluee));  
+}
 void testSearchInteger(void) {
   int* tab = generateSorted(10);
   int result = 2;
   CU_ASSERT_EQUAL(searchInteger(tab, 4, 3), result);
+}
+void testIfSorted(void){
+  int length = 10;
+  int* tab = generateSorted(length);
+  bool isSorted = true;
+  for(int i=0; i<length-1; i++){
+    for(int j=0; j<length-1-i; j++){
+        if(tab[j] > tab[j+1]){
+          isSorted = false;
+        }      
+    }
+  }
+  CU_ASSERT_TRUE(isSorted);
 }
 
 /* Mise en place des tests via main */
@@ -36,6 +56,9 @@ int main(void){
   /*ajouter les  tests à la suite */
   printf("add first test\n");
   if ((CU_add_test(pSuite,"testSearchInteger", testSearchInteger) == NULL) 
+      || (CU_add_test(pSuite,"testLengthTab", testLengthTab) == NULL) 
+      || (CU_add_test(pSuite,"testIfSorted", testIfSorted) == NULL) 
+
       /* si plus de tests: || (CU_add_test(...)) || ...|| (CU_add_test(...))*/
       ){
     CU_cleanup_registry();
