@@ -1,1 +1,1 @@
-gcc ./src/triangle.c ./src/mainTriangle.c
+gcc -Wall -c ./src/triangle.c

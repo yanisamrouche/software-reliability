@@ -12,10 +12,28 @@ int init_suite(void) { return 0;}
 int clean_suite(void){return 0;}
 
 /* les tests*/
-void testFormat(void) {
+void testEmptyFile(void){
+  Triangle triangle = readData("../emptyFile.txt");
+  int value = -1;
+  CU_ASSERT_EQUAL(triangle.coteA, value);
+  CU_ASSERT_EQUAL(triangle.coteB, value);
+  CU_ASSERT_EQUAL(triangle.coteC, value);
+}
+void testFileNotFound(void) {
+  Triangle triangle = readData("../notFoundFile.txt");
+  int value = -1;
+  CU_ASSERT_EQUAL(triangle.coteA, value);
+  CU_ASSERT_EQUAL(triangle.coteB, value);
+  CU_ASSERT_EQUAL(triangle.coteC, value);
   
 }
-
+void testExtensionTxt(void){
+  Triangle triangle = readData("../badExtension.csv");
+   int value = -1;
+   CU_ASSERT_EQUAL(triangle.coteA, value);
+   CU_ASSERT_EQUAL(triangle.coteB, value);
+   CU_ASSERT_EQUAL(triangle.coteC, value);
+}
 /* Mise en place des tests via main */
 int main(void){
     
@@ -39,7 +57,11 @@ int main(void){
   /*ajouter les  tests à la suite */
   printf("add first test\n");
   if (
-      (CU_add_test(pSuite,"testFormat", testFormat) == NULL) 
+      (CU_add_test(pSuite,"testEmptyFile", testEmptyFile) == NULL) 
+      ||(CU_add_test(pSuite,"testFileNotFound", testFileNotFound) == NULL) 
+       ||(CU_add_test(pSuite,"testExtensionTxt", testExtensionTxt) == NULL) 
+     
+
       /* si plus de tests: || (CU_add_test(...)) || ...|| (CU_add_test(...))*/
       ){
     CU_cleanup_registry();
