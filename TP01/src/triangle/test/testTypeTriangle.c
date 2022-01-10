@@ -12,31 +12,6 @@ int init_suite(void) { return 0;}
 int clean_suite(void){return 0;}
 
 /* les tests*/
-void testTypeValueA(void){
-  char a = 'a';
-  float b = 5.4;
-  float c = 2.5;
-  int value = -1;
-  CU_ASSERT_EQUAL(typeTriangle(a, b, c), value);
-
-}
-void testTypeValueB(void){
-  char a = 1.5;
-  float b = 'b';
-  float c = 2.5;
-  int value = -1;
-  CU_ASSERT_EQUAL(typeTriangle(a, b, c), value);
-
-}
-void testTypeValueC(void){
-  char a = 2.2;
-  float b = 5.4;
-  char c = 'c';
-  int value = -1;
-  CU_ASSERT_EQUAL(typeTriangle(a, b, c), value);
-
-}
-
 void testNegativeValueA(void) {
   float a = -2.0;
   float b = 3.5;
@@ -153,10 +128,7 @@ int main(void){
 
   /*ajouter les  tests à la suite */
   printf("add first test\n");
-  if ((CU_add_test(pSuite,"testTypeValueA", testTypeValueA) == NULL) 
-      ||(CU_add_test(pSuite,"testTypeValueB", testTypeValueB) == NULL) 
-      ||(CU_add_test(pSuite,"testTypeValueC", testTypeValueC) == NULL) 
-      ||(CU_add_test(pSuite,"testNegativeValueA", testNegativeValueA) == NULL) 
+  if ((CU_add_test(pSuite,"testNegativeValueA", testNegativeValueA) == NULL) 
       ||(CU_add_test(pSuite,"testNegativeValueB", testNegativeValueB) == NULL)  
       ||(CU_add_test(pSuite,"testNegativeValueC", testNegativeValueC) == NULL)
       ||(CU_add_test(pSuite,"testNullValueA", testNullValueA) == NULL)

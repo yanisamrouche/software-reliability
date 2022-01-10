@@ -77,5 +77,5 @@ int typeTriangle(float a, float b, float c){
     }else{
         return 1;
     }
-    
+    return -1;
 }
