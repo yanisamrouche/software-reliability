@@ -68,7 +68,7 @@ public class Complex {
     { // méthode à écrire
         int i=0;
         long start = System.currentTimeMillis();
-        while (i < 10000){
+        while (i < 1000){
             i++;
             System.out.println("#"+i);
         }

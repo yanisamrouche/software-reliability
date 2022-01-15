@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="search_Array.jar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/TP02/jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/TP02/jar" recursive="false" />
+  </library>
+</component>
