@@ -1,3 +1,9 @@
+/**
+ * nom : Triangle.java
+ * auteurs : Yanis AMROUCHE & Farouk AGUENI
+ * date de création : 12-01-2022
+ */
+
 package triangle;
 
 import java.io.*;

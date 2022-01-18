@@ -1,3 +1,8 @@
+/**
+ * nom : TestComplex.java
+ * auteurs : Yanis AMROUCHE & Farouk AGUENI
+ * date de création : 12-01-2022
+ */
 package testComplex;
 
 import com.company.Complex;
@@ -178,15 +183,11 @@ public class TestComplex {
 
         float expected = 1.0F * 4.0F + 2.0F * 3.0F;
 
-        Complex z = z1.product(z2);
+         z = z1.product(z2);
 
         Assertions.assertTrue(z.getImaginaryPart() == expected, "problem with Real part of Product");
 
     }
-
-
-
-
 
     /*
      * Ecrire un test qui échoue si le calcul avec infinite prend trop de temps

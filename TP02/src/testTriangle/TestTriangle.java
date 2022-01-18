@@ -1,3 +1,9 @@
+/**
+ * nom : TestTriangle.java
+ * auteurs : Yanis AMROUCHE & Farouk AGUENI
+ * date de création : 12-01-2022
+ */
+
 package testTriangle;
 import org.junit.jupiter.api.*;
 import triangle.Triangle;

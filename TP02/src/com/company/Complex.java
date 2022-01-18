@@ -1,3 +1,8 @@
+/**
+ * nom : Complex.java
+ * auteurs : Yanis AMROUCHE & Farouk AGUENI
+ * date de création : 12-01-2022
+ */
 package com.company;
 
 import org.omg.CORBA.TIMEOUT;
@@ -67,13 +72,10 @@ public class Complex {
     public static void infinite()
     { // méthode à écrire
         int i=0;
-        long start = System.currentTimeMillis();
-        while (i < 1000){
+
+        while (true){
             i++;
             System.out.println("#"+i);
         }
-        long end = System.currentTimeMillis();
-        long duree = end-start;
-        System.out.println("time = "+duree);
     }
 }
