@@ -1,0 +1,8 @@
+2.2 Analyse d'un code inconnu :
+
+1)  un test ne vérifie qu’une seule
+   assertion à la fois. (méthode testStringArray1())
+2) conclusion : class,method,line,branch => 100%
+
+5) 100%, 100%, 95%, 90%
+6)

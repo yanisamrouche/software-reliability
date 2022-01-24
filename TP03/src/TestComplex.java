@@ -3,9 +3,7 @@
  * auteurs : Yanis AMROUCHE & Farouk AGUENI
  * date de création : 12-01-2022
  */
-package testComplex;
-
-import com.company.Complex;
+//import com.company.Complex;
 
 /* nécessaire pour les timeout */
 import static java.time.Duration.ofMillis;
@@ -106,23 +104,6 @@ public class TestComplex {
     }
 
     @Test
-    public void testRealZeroTrue() {
-        z.setRealPart(0.0F);
-        z.setImaginaryPart(1.0F);
-
-        Assertions.assertFalse(z.is_zero(), "problem with is_zero on Zero Complex number");
-
-    }
-
-    @Test
-    public void testImaginaryZeroTrue() {
-        z.setRealPart(1.0F);
-        z.setImaginaryPart(0.0F);
-
-        Assertions.assertFalse(z.is_zero(), "problem with is_zero on Zero Complex number");
-
-    }
-    @Test
     public void testZeroFalse() {
         z.setRealPart(1.0F);
         z.setImaginaryPart(1.0F);
@@ -163,35 +144,20 @@ public class TestComplex {
         Complex z_inverse = z.inverse();
         System.out.println(z_inverse.getImaginaryPart());
         Assertions.assertTrue(z_inverse.getImaginaryPart() == expected, "problem with imaginary part of Sum");
+
     }
 
     @Test
     public void testInverseZero(){
-        try {
-            z0.inverse();
-        }catch (IllegalArgumentException e){
-            e.getMessage();
-        }
-    }
 
-    @Test
-    public void testInverseRealZero(){
-        z0.setImaginaryPart(1.0F);
         try {
             z0.inverse();
         }catch (IllegalArgumentException e){
             e.getMessage();
         }
-    }
 
-    @Test
-    public void testInverseImaginaryZero(){
-        z0.setRealPart(1.0F);
-        try {
-            z0.inverse();
-        }catch (IllegalArgumentException e){
-            e.getMessage();
-        }
+
+
 
     }
 
@@ -208,8 +174,6 @@ public class TestComplex {
     }
 
 
-
-
     @Test
     public void testProductImaginary() {
         //Complex z1 = new Complex(1.0F, 2.0F);
@@ -217,7 +181,7 @@ public class TestComplex {
 
         float expected = 1.0F * 4.0F + 2.0F * 3.0F;
 
-         z = z1.product(z2);
+        z = z1.product(z2);
 
         Assertions.assertTrue(z.getImaginaryPart() == expected, "problem with Real part of Product");
 
@@ -226,18 +190,11 @@ public class TestComplex {
     /*
      * Ecrire un test qui échoue si le calcul avec infinite prend trop de temps
      */
-    @Test
+    @Disabled
     public final void testTimeoutInfinite(){
         Assertions.assertTimeoutPreemptively(Duration.ofMillis(100),()->{Complex.infinite();});
     }
 
-    @Test
-    public void testToString(){
-        String expect = z.getRealPart() + "+i" + z.getImaginaryPart();
-        System.out.println(expect);
-        System.out.println( z.toString());
-        Assertions.assertTrue(expect.equals(z.toString()));
-    }
 
 
 
