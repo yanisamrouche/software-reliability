@@ -16,21 +16,40 @@ public class StringArray {
 
 	public StringArray(String[] list){
 		int dupl = 0;
+		Arrays.sort(list);
 		if (list.length > 0) {
 			String last = list[0];
 			int index = 0;
 			while (++index < list.length){
 				String comp = list[index];
 				int diff = last.compareTo(comp);
-				if (diff > 0){
-					Arrays.sort(list);
-					last=list[index];
-				} else if (diff < 0) {
+//				if (diff > 0){
+//
+//					last=list[index];
+//				} else
+				if (diff < 0) {
 					last = comp;
+				}else {
+					dupl++;
 				}
 			}
+
 		}
-		mlist = getArrayWithOutDuplicatedValues(list);
+		if (dupl > 0){
+			String [] uniques = new String[list.length - dupl];
+			String last = uniques[0] = list[0];
+			int index = 0;
+			int fill = 0;
+			while (++index < list.length) {
+				if (!last.equals(list[index])) {
+					last = list[index];
+					uniques[++fill] = last;
+				}
+			}
+			mlist = uniques;
+		} else {
+			mlist = list;
+		}
 	}
 	
 	public  String [] getMlist() {
@@ -67,24 +86,6 @@ public class StringArray {
 		return mlist.length;
 	}
 
-	public String[] getArrayWithOutDuplicatedValues(String[] l){
-		int dupl = 0;
-		List<String> copy = new ArrayList<String>(Arrays.asList(l));
-
-		for (int i=0; i<copy.size(); i++){
-			String string = copy.get(i);
-			for(int k=0; k<copy.size(); k++){
-				if(string.equals(copy.get(k)) && i!=k){
-					dupl++;
-					copy.remove(k);
-				}
-			}
-		}
-		String[] array = copy.toArray(new String[0]);
-		return array;
-
-
-	}
 
 
 }
